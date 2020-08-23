@@ -1,4 +1,4 @@
-pipeline {
+tpipeline {
     agent any
     stages {
         stage('One') {
@@ -34,7 +34,7 @@ pipeline {
                         agent {
                                 docker {
                                         reuseNode false
-					image 'ubuntu'
+					image 'centos'
                                         }
 			}
 				steps {
