@@ -32,16 +32,12 @@ pipeline {
                         }
                         stage('Integration test') {
                         agent {
-                                docker {
-                                        reuseNode false
-					image 'centos'
-                                        }
-			}
+                                			
 				steps {
 					echo 'Running the integration test..'
 				}
                                
-			}  }
+			  }
         }
     }
 }
