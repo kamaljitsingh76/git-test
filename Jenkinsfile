@@ -24,24 +24,20 @@ pipeline {
                         }
         }
         stage('Four') {
-                parallel {
-                        stage('Unit Test') 
-			  {
-                                steps{
-                                        echo "Running the unit test..."
-                                     }
+                 parallel { 
+                            stage('Unit Test') 
+			    {
+                           	steps {
+                                	echo "Running the unit test..."
+                           	      }
+                            }
+                            stage('Integration test') 
+			     {
+                                steps {
+                                	echo "Running the integration test..."
+                                      }
+                             }
                           }
-                        stage('Integration test') 
-			{
-                           agent {
-                                			
-				steps {
-					echo 'Running the integration test..'
-				      }
-			         }
-			}
-		}
-        }
-    }
+                      }
+         }
 }
-
